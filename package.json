@@ -1,38 +1,70 @@
 {
   "name": "fluent-vue-cli",
-  "version": "3.0.0-beta.19",
   "description": "fluent-vue CLI to manage translation resources",
-  "keywords": [
-    "localization",
-    "internationalization",
-    "vue",
-    "Fluent",
-    "ftl",
-    "CLI",
-    "fluent-vue"
-  ],
-  "sideEffects": false,
-  "main": "dist/fluent-vue-cli.cjs.js",
-  "module": "dist/fluent-vue-cli.esm.js",
-  "types": "dist/fluent-vue-cli.d.ts",
-  "exports": {
-    "import": "./dist/fluent-vue-cli.esm.js",
-    "require": "./dist/fluent-vue-cli.cjs.js"
+  "version": "0.0.0",
+  "author": "Ivan Demchuk @Demivan",
+  "bin": {
+    "fluent-vue-cli": "./bin/run"
+  },
+  "bugs": "https://github.com/Demivan/fluent-vue-cli/issues",
+  "dependencies": {
+    "@oclif/command": "^1",
+    "@oclif/config": "^1",
+    "@oclif/plugin-help": "^3",
+    "tslib": "^1"
   },
   "files": [
-    "dist",
-    "README.md"
+    "/bin",
+    "/lib",
+    "/npm-shrinkwrap.json",
+    "/oclif.manifest.json"
   ],
-  "author": "Ivan Demchuk <ivan.demchuk@gmail.com>",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/Demivan/fluent-vue"
-  },
-  "homepage": "https://fluent-vue.demivan.me/cli",
+  "homepage": "https://github.com/Demivan/fluent-vue-cli",
+  "keywords": [
+    "oclif"
+  ],
   "license": "MIT",
-  "dependencies": {
+  "main": "lib/index.js",
+  "oclif": {
+    "commands": "./lib/commands",
+    "bin": "fluent-vue-cli",
+    "plugins": [
+      "@oclif/plugin-help"
+    ]
+  },
+  "repository": "Demivan/fluent-vue-cli",
+  "scripts": {
+    "postpack": "rm -f oclif.manifest.json",
+    "posttest": "eslint . --ext .ts --config .eslintrc",
+    "prepack": "rm -rf lib && tsc -b && oclif-dev manifest && oclif-dev readme",
+    "test": "jest --runInBand",
+    "version": "oclif-dev readme && git add README.md"
+  },
+  "types": "lib/index.d.ts",
+  "devDependencies": {
     "@fluent/syntax": "^0.17.0",
     "@vue/compiler-dom": "^3.2.6",
-    "@vue/compiler-sfc": "^3.2.6"
+    "@vue/compiler-sfc": "^3.2.6",
+    "@oclif/dev-cli": "^1",
+    "@oclif/test": "^1",
+    "@types/jest": "^27.0.1",
+    "@types/node": "^10.17.60",
+    "@typescript-eslint/eslint-plugin": "^4.30.0",
+    "@typescript-eslint/parser": "^4.30.0",
+    "eslint": "^5.13",
+    "eslint-config-oclif": "^3.1",
+    "eslint-config-oclif-typescript": "^0.1",
+    "eslint-config-standard-with-typescript": "^21.0.1",
+    "eslint-plugin-import": "^2.24.2",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-promise": "^5.1.0",
+    "globby": "^10",
+    "jest": "^27.1.0",
+    "ts-jest": "^27.0.5",
+    "ts-node": "^8",
+    "typescript": "^3.3"
+  },
+  "engines": {
+    "node": ">=8.0.0"
   }
 }

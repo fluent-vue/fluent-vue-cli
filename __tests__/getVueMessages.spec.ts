@@ -1,4 +1,4 @@
-import { readFile } from 'fs/promises'
+import { promises as fs } from 'fs'
 import { resolve } from 'path'
 
 import { getVueMessages, MessagesWithLocale } from '../src'
@@ -6,7 +6,7 @@ import { getVueMessages, MessagesWithLocale } from '../src'
 describe('getVueMessages', () => {
   it('extracts locale messages from SFC', async () => {
     // Arrange
-    const source = await readFile(resolve(__dirname, 'fixtures', './Simple.vue'))
+    const source = await fs.readFile(resolve(__dirname, 'fixtures', './Simple.vue'))
 
     // Act
     const messages = getVueMessages(source.toString())
@@ -30,7 +30,7 @@ Array [
 
   it('extracts multiple SFC blocks', async () => {
     // Arrange
-    const source = await readFile(resolve(__dirname, 'fixtures', './Multiple.vue'))
+    const source = await fs.readFile(resolve(__dirname, 'fixtures', './Multiple.vue'))
 
     // Act
     const messages = getVueMessages(source.toString())

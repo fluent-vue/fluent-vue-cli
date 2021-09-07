@@ -1,4 +1,4 @@
-import { readFile } from 'fs/promises'
+import { promises as fs } from 'fs'
 import { resolve } from 'path'
 
 import { mergeVue } from '../src'
@@ -6,7 +6,7 @@ import { mergeVue } from '../src'
 describe('mergeVue', () => {
   it('adds new key/values', async () => {
     // Arrange
-    const source = await readFile(resolve(__dirname, 'fixtures', './Simple.vue'))
+    const source = await fs.readFile(resolve(__dirname, 'fixtures', './Simple.vue'))
     const newTranslation = { hello: 'Hello' }
 
     // Act
@@ -38,7 +38,7 @@ hello = Hello
 
   it('adds new block for new locale', async () => {
     // Arrange
-    const source = await readFile(resolve(__dirname, 'fixtures', './Simple.vue'))
+    const source = await fs.readFile(resolve(__dirname, 'fixtures', './Simple.vue'))
     const newTranslation = { hello: 'Hello' }
 
     // Act
