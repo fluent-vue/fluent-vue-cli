@@ -1,4 +1,4 @@
-import HelloCommand from  '../../commands/hello'
+import HelloCommand from  '../../src/commands/hello'
 
 describe('hello', () => {
   let result: string | undefined;
