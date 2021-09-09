@@ -76,7 +76,8 @@ function extractFromCustomBlocks (blocks: SFCBlock[]): MessagesWithLocale[] {
 
     return {
       locale,
-      messages: getFtlMessages(block.content)
+      messages: getFtlMessages(block.content),
+      source: block.content.trimStart()
     }
   }).filter(Boolean) as MessagesWithLocale[]
 }

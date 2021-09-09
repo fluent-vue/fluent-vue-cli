@@ -12,6 +12,7 @@
     "@oclif/config": "^1",
     "@oclif/errors": "^1.3.5",
     "@oclif/plugin-help": "^3",
+    "fast-glob": "^3.2.7",
     "tslib": "^1"
   },
   "files": [
