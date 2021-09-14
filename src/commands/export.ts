@@ -29,7 +29,9 @@ export default class Export extends Command {
   async run() {
     const { argv, flags } = this.parse(Export)
 
+    let count = 0
     for await (const file of stream(argv)) {
+      count ++
       const data = await fs.readFile(file)
 
       const vueMessages = getVueMessages(data.toString())
@@ -40,10 +42,8 @@ export default class Export extends Command {
         await fs.mkdir(dirname(outputPath), { recursive: true })
 
         if (flags.clean || !existsSync(outputPath)) {
-          console.log('clean')
           await fs.writeFile(outputPath, source)
         } else {
-          console.log('merge')
           const existingFtlData = await fs.readFile(outputPath)
 
           const newData = mergeFtl(existingFtlData.toString(), messages)
@@ -52,5 +52,7 @@ export default class Export extends Command {
         }
       }
     }
+
+    this.log(`Extracted messages from ${count} files`)
   }
 }

@@ -28,28 +28,30 @@ USAGE
 <!-- usagestop -->
 # Commands
 <!-- commands -->
-* [`fluent-vue-cli hello [FILE]`](#fluent-vue-cli-hello-file)
+* [`fluent-vue-cli export FILES`](#fluent-vue-cli-export-files)
 * [`fluent-vue-cli help [COMMAND]`](#fluent-vue-cli-help-command)
 
-## `fluent-vue-cli hello [FILE]`
+## `fluent-vue-cli export FILES`
 
-describe the command here
+Exports translation from Vue.js SFC files into ftl files.
 
 ```
 USAGE
-  $ fluent-vue-cli hello [FILE]
+  $ fluent-vue-cli export FILES
+
+ARGUMENTS
+  FILES  list of Vue.js files
 
 OPTIONS
-  -f, --force
-  -h, --help       show CLI help
-  -n, --name=name  name to print
+  -c, --clean          clean output directory
+  -d, --outDir=outDir  [default: translations] output directory
+  -h, --help           show CLI help
 
 EXAMPLE
-  $ fluent-vue-cli hello
-  hello world from ./src/hello.ts!
+  $ fluent-vue-cli export **/*.src --outDir translations/
 ```
 
-_See code: [src/commands/hello.ts](https://github.com/Demivan/fluent-vue-cli/blob/v0.0.0/src/commands/hello.ts)_
+_See code: [src/commands/export.ts](https://github.com/Demivan/fluent-vue-cli/blob/v0.0.0/src/commands/export.ts)_
 
 ## `fluent-vue-cli help [COMMAND]`
 
