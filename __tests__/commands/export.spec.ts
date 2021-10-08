@@ -1,29 +1,31 @@
-import HelloCommand from  '../../src/commands/hello'
+import { sync as rimraf } from 'rimraf'
 
-describe('hello', () => {
-  let result: string | undefined;
+import ExportCommand from  '../../src/commands/export'
+
+describe('export', () => {
+  let result: string | Uint8Array | undefined;
 
 	beforeEach(() => {
 		result = undefined;
 		jest
 			.spyOn(process.stdout, 'write')
-			.mockImplementation((val: string): boolean => {
+			.mockImplementation((val: string | Uint8Array): boolean => {
 				result = val
         return true
       });
 	});
 
-	afterEach(() => jest.restoreAllMocks());
+	afterEach(() => {
+    jest.restoreAllMocks()
 
-  it('runs hello', async () => {
-    await HelloCommand.run([])
-
-    expect(result).toContain('hello world')
+    rimraf('translations')
   })
 
-  it('runs hello --name jeff', async () => {
-    await HelloCommand.run(['hello', '--name', 'jeff'])
+  it('extracts ftl messages from .vue files', async () => {
+    // Act
+    await ExportCommand.run(['__tests__/fixtures/*.vue'])
 
-    expect(result).toContain('hello jeff')
+    // Assert
+    expect(result).toContain('Extracted messages from 2 files')
   })
 })
