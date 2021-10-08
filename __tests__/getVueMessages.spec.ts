@@ -23,6 +23,11 @@ Array [
     .aria-label = Label value",
       "user-name": "World",
     },
+    "source": "user-name = World
+aria-key = Aria value
+greeting = Hello, {$name}
+  .aria-label = Label value
+",
   },
 ]
 `)
@@ -47,6 +52,11 @@ Array [
     .aria-label = Label value",
       "user-name": "World",
     },
+    "source": "user-name = World
+aria-key = Aria value
+greeting = Hello, {$name}
+  .aria-label = Label value
+",
   },
   Object {
     "locale": "uk",
@@ -56,6 +66,11 @@ Array [
     .aria-label = Значення мітки",
       "user-name": "Світ",
     },
+    "source": "user-name = Світ
+aria-key = Значення aria
+greeting = Привіт, {$name}
+  .aria-label = Значення мітки
+",
   },
 ]
 `)
@@ -106,6 +121,9 @@ Array [
       "fluent-key": "fluent value",
       "key": "value",
     },
+    "source": "key = value
+fluent-key = fluent value
+",
   },
 ]
 `)
