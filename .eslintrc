@@ -1,5 +1,8 @@
 {
   "plugins": ["@typescript-eslint"],
+  "parserOptions": {
+    "project": "tsconfig.json"
+  },
   "extends": [
     "oclif",
     "oclif-typescript",
