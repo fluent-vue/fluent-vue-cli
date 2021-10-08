@@ -1,0 +1,25 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`export extracts ftl messages from .vue files: translations/en/__tests__/fixtures/Multiple.vue.ftl 1`] = `
+"user-name = World
+aria-key = Aria value
+greeting = Hello, {$name}
+  .aria-label = Label value
+"
+`;
+
+exports[`export extracts ftl messages from .vue files: translations/en/__tests__/fixtures/Simple.vue.ftl 1`] = `
+"user-name = World
+aria-key = Aria value
+greeting = Hello, {$name}
+  .aria-label = Label value
+"
+`;
+
+exports[`export extracts ftl messages from .vue files: translations/uk/__tests__/fixtures/Multiple.vue.ftl 1`] = `
+"user-name = Світ
+aria-key = Значення aria
+greeting = Привіт, {$name}
+  .aria-label = Значення мітки
+"
+`;
