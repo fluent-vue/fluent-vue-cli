@@ -9,7 +9,7 @@ export default class Export extends Command {
   static description = 'Exports translation from Vue.js SFC files into ftl files.'
 
   static examples = [
-    `$ fluent-vue-cli export **/*.src --outDir translations/`,
+    '$ fluent-vue-cli export **/*.src --outDir translations/'
   ]
 
   static flags = {
@@ -26,18 +26,20 @@ export default class Export extends Command {
 
   static strict = false
 
-  async run() {
+  async run (): Promise<void> {
     const { argv, flags } = this.parse(Export)
 
     let count = 0
     for await (const file of stream(argv)) {
-      count ++
+      const path = file.toString()
+
+      count++
       const data = await fs.readFile(file)
 
       const vueMessages = getVueMessages(data.toString())
 
       for (const { locale, source, messages } of vueMessages) {
-        const outputPath = resolve(flags.outDir, locale, `${file}.ftl`)
+        const outputPath = resolve(flags.outDir, locale, `${path}.ftl`)
 
         await fs.mkdir(dirname(outputPath), { recursive: true })
 
