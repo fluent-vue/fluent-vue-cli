@@ -4,42 +4,38 @@
   "version": "0.0.0",
   "author": "Ivan Demchuk @Demivan",
   "bin": {
-    "fluent-vue-cli": "./bin/run"
+    "fluent-vue": "./bin/run"
   },
   "bugs": "https://github.com/Demivan/fluent-vue-cli/issues",
   "dependencies": {
-    "fast-glob": "^3.2.7",
-    "tslib": "^1"
+    "@fluent/syntax": "^0.17.0",
+    "@vue/compiler-dom": "^3.2.6",
+    "@vue/compiler-sfc": "^3.2.6",
+    "cac": "^6.7.12",
+    "fast-glob": "^3.2.11"
   },
   "files": [
     "/bin",
-    "/lib"
+    "/dist"
   ],
   "homepage": "https://github.com/Demivan/fluent-vue-cli",
   "license": "MIT",
-  "main": "lib/index.js",
+  "main": "dist/index.js",
   "repository": "Demivan/fluent-vue-cli",
   "scripts": {
+    "build": "tsup",
+    "dev": "tsup --watch",
     "lint": "eslint . --ext .ts --config .eslintrc",
     "test": "vitest run",
     "test:dev": "vitest"
   },
   "types": "lib/index.d.ts",
   "devDependencies": {
-    "@fluent/syntax": "^0.17.0",
+    "@antfu/eslint-config-basic": "^0.16.1",
     "@types/node": "^10.17.60",
-    "@typescript-eslint/eslint-plugin": "^4.30.0",
-    "@typescript-eslint/parser": "^4.30.0",
-    "@vue/compiler-dom": "^3.2.6",
-    "@vue/compiler-sfc": "^3.2.6",
-    "eslint": "^5.13",
-    "eslint-config-standard-with-typescript": "^21.0.1",
-    "eslint-plugin-import": "^2.24.2",
-    "eslint-plugin-node": "^11.1.0",
-    "eslint-plugin-promise": "^5.1.0",
-    "globby": "^10",
-    "ts-node": "^8",
-    "typescript": "^3.3",
+    "eslint": "^8.9.0",
+    "tsup": "^5.11.13",
+    "typescript": "^4.5.5",
     "vitest": "^0.3.6"
   },
   "engines": {

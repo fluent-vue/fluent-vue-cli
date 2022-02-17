@@ -1,12 +1,13 @@
 {
   "compilerOptions": {
+    "noEmit": true,
     "declaration": true,
-    "importHelpers": true,
-    "module": "commonjs",
-    "outDir": "lib",
+    "module": "ESNext",
+    "moduleResolution": "node",
+    "outDir": "dist",
     "rootDir": "src",
-    "strict": true,
-    "target": "es2017"
+    "target": "es2017",
+    "strict": true
   },
   "include": [
     "src/**/*"

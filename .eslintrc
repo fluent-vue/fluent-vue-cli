@@ -1,11 +1,5 @@
 {
-  "plugins": ["@typescript-eslint"],
   "extends": [
-    "oclif",
-    "oclif-typescript",
-    "eslint:recommended",
-    "plugin:@typescript-eslint/eslint-recommended",
-    "plugin:@typescript-eslint/recommended",
-    "standard-with-typescript"
+    "@antfu/eslint-config-basic"
   ]
 }
