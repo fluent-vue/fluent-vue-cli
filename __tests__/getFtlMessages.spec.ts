@@ -1,3 +1,5 @@
+import { describe, it, expect } from 'vitest'
+
 import { getFtlMessages } from '../src'
 
 describe('getVueMessages', () => {
@@ -15,7 +17,7 @@ greeting = Hello, {$name}
 
     // Assert
     expect(messages).toMatchInlineSnapshot(`
-Object {
+{
   "aria-key": "Aria value",
   "greeting": "Hello, { $name }
     .aria-label = Label value",
@@ -41,7 +43,7 @@ greeting = Hello, {$name}
 
     // Assert
     expect(messages).toMatchInlineSnapshot(`
-Object {
+{
   "aria-key": "Aria value",
   "greeting": "Hello, { $name }
     .aria-label = Label value",

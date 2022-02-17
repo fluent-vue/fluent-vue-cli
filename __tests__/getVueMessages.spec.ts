@@ -1,3 +1,5 @@
+import { describe, it, expect } from 'vitest'
+
 import { promises as fs } from 'fs'
 import { resolve } from 'path'
 
@@ -14,18 +16,23 @@ describe('getVueMessages', () => {
     // Assert
     expect(messages).toHaveLength(1)
     expect(messages).toMatchInlineSnapshot(`
-Array [
-  Object {
-    "locale": "en",
-    "messages": Object {
-      "aria-key": "Aria value",
-      "greeting": "Hello, { $name }
-    .aria-label = Label value",
-      "user-name": "World",
-    },
-  },
-]
-`)
+      [
+        {
+          "locale": "en",
+          "messages": {
+            "aria-key": "Aria value",
+            "greeting": "Hello, { \$name }
+          .aria-label = Label value",
+            "user-name": "World",
+          },
+          "source": "user-name = World
+      aria-key = Aria value
+      greeting = Hello, {\$name}
+        .aria-label = Label value
+      ",
+        },
+      ]
+    `)
   })
 
   it('extracts multiple SFC blocks', async () => {
@@ -38,27 +45,37 @@ Array [
     // Assert
     expect(messages).toHaveLength(2)
     expect(messages).toMatchInlineSnapshot(`
-Array [
-  Object {
-    "locale": "en",
-    "messages": Object {
-      "aria-key": "Aria value",
-      "greeting": "Hello, { $name }
-    .aria-label = Label value",
-      "user-name": "World",
-    },
-  },
-  Object {
-    "locale": "uk",
-    "messages": Object {
-      "aria-key": "Значення aria",
-      "greeting": "Привіт, { $name }
-    .aria-label = Значення мітки",
-      "user-name": "Світ",
-    },
-  },
-]
-`)
+      [
+        {
+          "locale": "en",
+          "messages": {
+            "aria-key": "Aria value",
+            "greeting": "Hello, { \$name }
+          .aria-label = Label value",
+            "user-name": "World",
+          },
+          "source": "user-name = World
+      aria-key = Aria value
+      greeting = Hello, {\$name}
+        .aria-label = Label value
+      ",
+        },
+        {
+          "locale": "uk",
+          "messages": {
+            "aria-key": "Значення aria",
+            "greeting": "Привіт, { \$name }
+          .aria-label = Значення мітки",
+            "user-name": "Світ",
+          },
+          "source": "user-name = Світ
+      aria-key = Значення aria
+      greeting = Привіт, {\$name}
+        .aria-label = Значення мітки
+      ",
+        },
+      ]
+    `)
   })
 
   it('throws if fluent block does not have locale', () => {
@@ -99,15 +116,18 @@ fluent-key = fluent value
 
     // Assert
     expect(messages).toMatchInlineSnapshot(`
-Array [
-  Object {
-    "locale": "en",
-    "messages": Object {
-      "fluent-key": "fluent value",
-      "key": "value",
-    },
-  },
-]
-`)
+      [
+        {
+          "locale": "en",
+          "messages": {
+            "fluent-key": "fluent value",
+            "key": "value",
+          },
+          "source": "key = value
+      fluent-key = fluent value
+      ",
+        },
+      ]
+    `)
   })
 })
