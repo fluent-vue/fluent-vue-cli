@@ -6,3 +6,6 @@
 /package-lock.json
 /tmp
 node_modules
+.idea/.idea.fluent-vue-cli.dir/.idea/indexLayout.xml
+.idea/.idea.fluent-vue-cli.dir/.idea/workspace.xml
+.idea
