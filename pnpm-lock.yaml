@@ -4,7 +4,7 @@ specifiers:
   '@antfu/eslint-config-basic': 0.16.1
   '@fluent/syntax': ^0.17.0
   '@types/node': 10.17.60
-  '@types/unixify': ^1.0.0
+  '@types/unixify': 1.0.0
   '@vue/compiler-dom': ^3.2.6
   '@vue/compiler-sfc': ^3.2.6
   cac: ^6.7.12
