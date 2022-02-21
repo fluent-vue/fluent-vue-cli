@@ -4,6 +4,7 @@ specifiers:
   '@antfu/eslint-config-basic': 0.16.1
   '@fluent/syntax': ^0.17.0
   '@types/node': 10.17.60
+  '@types/unixify': ^1.0.0
   '@vue/compiler-dom': ^3.2.6
   '@vue/compiler-sfc': ^3.2.6
   cac: ^6.7.12
@@ -11,6 +12,7 @@ specifiers:
   fast-glob: ^3.2.11
   tsup: 5.11.13
   typescript: 4.5.5
+  unixify: ^1.0.0
   vitest: 0.3.6
 
 dependencies:
@@ -19,10 +21,12 @@ dependencies:
   '@vue/compiler-sfc': 3.2.31
   cac: 6.7.12
   fast-glob: 3.2.11
+  unixify: 1.0.0
 
 devDependencies:
   '@antfu/eslint-config-basic': 0.16.1_eslint@8.9.0
   '@types/node': 10.17.60
+  '@types/unixify': 1.0.0
   eslint: 8.9.0
   tsup: 5.11.13_typescript@4.5.5
   typescript: 4.5.5
@@ -153,6 +157,10 @@ packages:
 
   /@types/normalize-package-data/2.4.1:
     resolution: {integrity: sha512-Gj7cI7z+98M282Tqmp2K5EIsoouUEzbBJhQQzDE3jSIRk6r9gsz0oUokqIUR4u1R3dMHo0pDHM7sNOHyhulypw==}
+    dev: true
+
+  /@types/unixify/1.0.0:
+    resolution: {integrity: sha512-JZMxxE1x9vR5TfKM0SmiePGlAc4h7LK4likxmwYKDCZfJjPHe4yL/ulkuKWV7oOYTxtbmBHYisnpiaBssosQdw==}
     dev: true
 
   /@vue/compiler-core/3.2.31:
@@ -1653,6 +1661,13 @@ packages:
       validate-npm-package-license: 3.0.4
     dev: true
 
+  /normalize-path/2.1.1:
+    resolution: {integrity: sha1-GrKLVW4Zg2Oowab35vogE3/mrtk=}
+    engines: {node: '>=0.10.0'}
+    dependencies:
+      remove-trailing-separator: 1.1.0
+    dev: false
+
   /normalize-path/3.0.0:
     resolution: {integrity: sha512-6eZs5Ls3WtCisHWp9S2GUy8dqkpGi4BVSz3GaqiE6ezub0512ESztXUwUB6C6IKbQkY2Pnb/mD4WYojCRwcwLA==}
     engines: {node: '>=0.10.0'}
@@ -1897,6 +1912,10 @@ packages:
     resolution: {integrity: sha512-pq2bWo9mVD43nbts2wGv17XLiNLya+GklZ8kaDLV2Z08gDCsGpnKn9BFMepvWuHCbyVvY7J5o5+BVvoQbmlJLg==}
     engines: {node: '>=8'}
     dev: true
+
+  /remove-trailing-separator/1.1.0:
+    resolution: {integrity: sha1-wkvOKig62tW8P1jg1IJJuSN52O8=}
+    dev: false
 
   /resolve-from/4.0.0:
     resolution: {integrity: sha512-pb/MYmXstAkysRFx8piNI1tGFNQIFA3vkE3Gq4EuA1dF6gHp/+vgZqsCGJapvy8N3Q+4o7FwvquPJcnZ7RYy4g==}
@@ -2230,6 +2249,13 @@ packages:
       has-symbols: 1.0.2
       which-boxed-primitive: 1.0.2
     dev: true
+
+  /unixify/1.0.0:
+    resolution: {integrity: sha1-OmQcjC/7zk2mg6XHDwOkYpQMIJA=}
+    engines: {node: '>=0.10.0'}
+    dependencies:
+      normalize-path: 2.1.1
+    dev: false
 
   /uri-js/4.4.1:
     resolution: {integrity: sha512-7rKUyy33Q1yc98pQ1DAmLtwX109F7TIfWlW1Ydo8Wl1ii1SeHieeh0HHfPeL2fMXK6z0s8ecKs9frCuLJvndBg==}
