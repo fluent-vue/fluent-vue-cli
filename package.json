@@ -1,7 +1,7 @@
 {
   "name": "fluent-vue-cli",
   "description": "fluent-vue CLI to manage translation resources",
-  "version": "3.0.2",
+  "version": "3.0.3",
   "author": {
     "email": "ivan.demchuk@gmail.com",
     "name": "Ivan Demchuk",
@@ -25,7 +25,12 @@
   ],
   "homepage": "https://github.com/Demivan/fluent-vue-cli",
   "license": "MIT",
+  "exports": {
+    "require": "./dist/index.js",
+    "import": "./dist/index.mjs"
+  },
   "main": "dist/index.js",
+  "module": "dist/index.mjs",
   "repository": "Demivan/fluent-vue-cli",
   "scripts": {
     "build": "tsup",
