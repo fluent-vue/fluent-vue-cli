@@ -1,7 +1,7 @@
 {
   "name": "fluent-vue-cli",
   "description": "fluent-vue CLI to manage translation resources",
-  "version": "3.0.1",
+  "version": "3.0.2",
   "author": {
     "email": "ivan.demchuk@gmail.com",
     "name": "Ivan Demchuk",
@@ -34,7 +34,7 @@
     "test": "vitest run",
     "test:dev": "vitest"
   },
-  "types": "lib/index.d.ts",
+  "types": "dist/index.d.ts",
   "devDependencies": {
     "@antfu/eslint-config-basic": "0.16.1",
     "@types/node": "16.11.25",
