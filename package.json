@@ -1,8 +1,12 @@
 {
   "name": "fluent-vue-cli",
   "description": "fluent-vue CLI to manage translation resources",
-  "version": "0.0.0",
-  "author": "Ivan Demchuk @Demivan",
+  "version": "3.0.1",
+  "author": {
+    "email": "ivan.demchuk@gmail.com",
+    "name": "Ivan Demchuk",
+    "url": "https://demivan.me"
+  },
   "bin": {
     "fluent-vue": "./bin/run"
   },
