@@ -11,7 +11,7 @@ specifiers:
   eslint: 8.9.0
   fast-glob: ^3.2.11
   tsup: 5.11.13
-  typescript: 4.5.5
+  typescript: 5.3.3
   unixify: ^1.0.0
   vitest: 0.5.0
 
@@ -28,8 +28,8 @@ devDependencies:
   '@types/node': 16.11.25
   '@types/unixify': 1.0.0
   eslint: 8.9.0
-  tsup: 5.11.13_typescript@4.5.5
-  typescript: 4.5.5
+  tsup: 5.11.13_typescript@5.3.3
+  typescript: 5.3.3
   vitest: 0.5.0
 
 packages:
@@ -2244,7 +2244,7 @@ packages:
       strip-bom: 3.0.0
     dev: true
 
-  /tsup/5.11.13_typescript@4.5.5:
+  /tsup/5.11.13_typescript@5.3.3:
     resolution: {integrity: sha512-NVMK01gVmojZn7+iZwxRK1CzW2BIabaVMyEjs7Nm9lm4DrSf7IAqs2F3fg0vT7rH72x1cIBsW9U/TlWrCvHVQQ==}
     hasBin: true
     peerDependencies:
@@ -2267,7 +2267,7 @@ packages:
       source-map: 0.7.3
       sucrase: 3.20.3
       tree-kill: 1.2.2
-      typescript: 4.5.5
+      typescript: 5.3.3
     transitivePeerDependencies:
       - supports-color
       - ts-node
@@ -2300,9 +2300,9 @@ packages:
     engines: {node: '>=8'}
     dev: true
 
-  /typescript/4.5.5:
-    resolution: {integrity: sha512-TCTIul70LyWe6IJWT8QSYeA54WQe8EjQFU4wY52Fasj5UKx88LNYKCgBEHcOMOrFF1rKGbD8v/xcNWVUq9SymA==}
-    engines: {node: '>=4.2.0'}
+  /typescript/5.3.3:
+    resolution: {integrity: sha512-pXWcraxM0uxAS+tN0AG/BF2TyqmHO014Z070UsJ+pFvYuRSq8KH8DmWpnbXe0pEPDHXZV3FcAbJkijJ5oNEnWw==}
+    engines: {node: '>=14.17'}
     hasBin: true
     dev: true
 
