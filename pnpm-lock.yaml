@@ -3,7 +3,7 @@ lockfileVersion: 5.4
 specifiers:
   '@antfu/eslint-config-basic': 0.16.1
   '@fluent/syntax': ^0.18.0
-  '@types/node': 16.11.25
+  '@types/node': 20.10.6
   '@types/unixify': 1.0.0
   '@vue/compiler-dom': ^3.2.6
   '@vue/compiler-sfc': ^3.2.6
@@ -25,7 +25,7 @@ dependencies:
 
 devDependencies:
   '@antfu/eslint-config-basic': 0.16.1_eslint@8.9.0
-  '@types/node': 16.11.25
+  '@types/node': 20.10.6
   '@types/unixify': 1.0.0
   eslint: 8.9.0
   tsup: 5.11.13_typescript@4.5.5
@@ -174,8 +174,10 @@ packages:
     resolution: {integrity: sha1-7ihweulOEdK4J7y+UnC86n8+ce4=}
     dev: true
 
-  /@types/node/16.11.25:
-    resolution: {integrity: sha512-NrTwfD7L1RTc2qrHQD4RTTy4p0CO2LatKBEKEds3CaVuhoM/+DJzmWZl5f+ikR8cm8F5mfJxK+9rQq07gRiSjQ==}
+  /@types/node/20.10.6:
+    resolution: {integrity: sha512-Vac8H+NlRNNlAmDfGUP7b5h/KA+AtWIzuXy0E6OyP8f1tCLYAtPvKRRDJjAPqhpCb0t6U2j7/xqAuLEebW2kiw==}
+    dependencies:
+      undici-types: 5.26.5
     dev: true
 
   /@types/normalize-package-data/2.4.1:
@@ -2313,6 +2315,10 @@ packages:
       has-bigints: 1.0.1
       has-symbols: 1.0.2
       which-boxed-primitive: 1.0.2
+    dev: true
+
+  /undici-types/5.26.5:
+    resolution: {integrity: sha512-JlCMO+ehdEIKqlFxk6IfVoAUVmgz7cU7zD/h9XZ0qzeosSHmUJVOzSQvvYSYWXkFXC+IfLKSIffhv0sVZup6pA==}
     dev: true
 
   /unixify/1.0.0:
